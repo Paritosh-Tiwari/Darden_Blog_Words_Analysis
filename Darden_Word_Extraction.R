@@ -11,13 +11,16 @@ for (i in seq_along(1:6)) {
 }
 
 
-## Making a word Frequency Table
+## Dumping data to a text file and reading in again so that all data is in a single list
 
 dump("text",file = "Darden_Blog.txt")
 raw_text = readLines("Darden_Blog.txt")
+
+## Splitting data by spaces
 raw_text_split = strsplit(raw_text, " ")
 raw_dump = " "
 
+## Joining all words in a single vector
 for (i in seq_along(1:39)){
         raw_dump = c(raw_dump,raw_text_split[[i]])
 }
